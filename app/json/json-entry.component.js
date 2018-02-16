@@ -1,5 +1,5 @@
 angular.module('app').component('appJsonEntry', {
-    templateUrl: 'app/json/json-entry.component.html',
+    templateUrl: '/app/json/json-entry.component.html',
     bindings: {
         value: '<',
         onUpdate: '&'

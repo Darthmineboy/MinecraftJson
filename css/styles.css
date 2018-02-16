@@ -1,3 +1,71 @@
 .json-child {
     margin-left: 20px;
 }
+
+/**
+ * Minecraft Colors
+ */
+
+.minecraft-black {
+    color: rgb(0, 0, 0);
+}
+
+.minecraft-dark_blue {
+    color: rgb(0, 0, 178);
+}
+
+.minecraft-dark_green {
+    color: rgb(20, 171, 0);
+}
+
+.minecraft-dark_aqua {
+    color: rgb(19, 170, 171);
+}
+
+.minecraft-dark_red {
+    color: rgb(169, 4, 0);
+}
+
+.minecraft-dark_purple {
+    color: rgb(169, 0, 178);
+}
+
+.minecraft-gold {
+    color: rgb(254, 172, 0);
+}
+
+.minecraft-gray {
+    color: rgb(170, 170, 170);
+}
+
+.minecraft-dark_gray {
+    color: rgb(85, 85, 85);
+}
+
+.minecraft-blue {
+    color: rgb(84, 76, 255);
+}
+
+.minecraft-green {
+    color: rgb(92, 255, 0);
+}
+
+.minecraft-aqua {
+    color: rgb(91, 255, 255);
+}
+
+.minecraft-red {
+    color: rgb(253, 86, 80);
+}
+
+.minecraft-light_purple {
+    color: rgb(253, 77, 255);
+}
+
+.minecraft-yellow {
+    color: rgb(255, 255, 0);
+}
+
+.minecraft-white {
+    color: rgb(255, 255, 255);
+}

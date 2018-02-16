@@ -4,19 +4,19 @@
 </div>
 <form class="form-inline">
     <label class="form-group">
-        <input type="checkbox" class="form-control" ng-model="$ctrl.value.bold"> Bold
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.bold" ng-change="$ctrl.update()"> Bold
     </label>
     <label class="form-group">
-        <input type="checkbox" class="form-control" ng-model="$ctrl.value.italic"> Italic
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.italic" ng-change="$ctrl.update()"> Italic
     </label>
     <label class="form-group">
-        <input type="checkbox" class="form-control" ng-model="$ctrl.value.underlined"> Underlined
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.underlined" ng-change="$ctrl.update()"> Underlined
     </label>
     <label class="form-group">
-        <input type="checkbox" class="form-control" ng-model="$ctrl.value.strikethrough"> Strikethrough
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.strikethrough" ng-change="$ctrl.update()"> Strikethrough
     </label>
     <label class="form-group">
-        <input type="checkbox" class="form-control" ng-model="$ctrl.value.obfuscated"> Obfuscated
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.obfuscated" ng-change="$ctrl.update()"> Obfuscated
     </label>
 </form>
 <div class="json-child">
@@ -24,6 +24,6 @@
         <button type="submit" class="btn btn-primary btn-sm">New child</button>
     </form>
     <div ng-repeat="extra in $ctrl.value.extra">
-        <app-json-entry value="extra"></app-json-entry>
+        <app-json-entry value="extra" on-update="$ctrl.update()"></app-json-entry>
     </div>
 </div>
