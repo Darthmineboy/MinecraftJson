@@ -1,0 +1,29 @@
+<div class="input-group" style="width: 100%;">
+    <input type="text" class="form-control" placeholder="Value" style="width: 75%;" ng-model="$ctrl.value.text" ng-change="$ctrl.update()">
+    <select class="form-control" style="width: 25%;" ng-options="color.value as color.name for color in $ctrl.colors" ng-model="$ctrl.value.color" ng-change="$ctrl.update()"></select>
+</div>
+<form class="form-inline">
+    <label class="form-group">
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.bold"> Bold
+    </label>
+    <label class="form-group">
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.italic"> Italic
+    </label>
+    <label class="form-group">
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.underlined"> Underlined
+    </label>
+    <label class="form-group">
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.strikethrough"> Strikethrough
+    </label>
+    <label class="form-group">
+        <input type="checkbox" class="form-control" ng-model="$ctrl.value.obfuscated"> Obfuscated
+    </label>
+</form>
+<div class="json-child">
+    <form class="form" ng-submit="$ctrl.value.extra ? $ctrl.value.extra.push({}) : $ctrl.value.extra = [{}]">
+        <button type="submit" class="btn btn-primary btn-sm">New child</button>
+    </form>
+    <div ng-repeat="extra in $ctrl.value.extra">
+        <app-json-entry value="extra"></app-json-entry>
+    </div>
+</div>

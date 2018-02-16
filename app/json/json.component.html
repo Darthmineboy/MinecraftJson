@@ -1,0 +1,12 @@
+<form class="form">
+    <div class="form-group" ng-repeat="value in $ctrl.values track by $index">
+        <app-json-entry value="value"></app-json-entry>
+    </div>
+</form>
+<form class="form" ng-submit="$ctrl.values.push({})">
+    <button type="submit" class="btn btn-primary btn-sm">New</button>
+</form>
+{{$ctrl.values}}
+<div class="">
+
+</div>

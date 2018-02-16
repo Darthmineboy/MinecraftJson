@@ -1,0 +1,7 @@
+.env
+
+bower_components/
+.idea/
+node_modules/
+public/
+build/
