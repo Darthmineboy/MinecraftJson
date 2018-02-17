@@ -27,6 +27,11 @@ angular.module('app').component('appJson', {
             }
         ];
 
+        $ctrl.onDelete = function(value) {
+            $ctrl.values.splice($ctrl.values.indexOf(value), 1);
+            $ctrl.onUpdate();
+        }
+
         $ctrl.addValue = function(value) {
             $ctrl.values.push(angular.copy(value));
             angular.copy({}, value);

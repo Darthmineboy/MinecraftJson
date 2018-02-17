@@ -18,12 +18,29 @@
     <label class="form-group">
         <input type="checkbox" class="form-control" ng-model="$ctrl.value.obfuscated" ng-change="$ctrl.update()"> Obfuscated
     </label>
+    <div class="form-group">
+        <select class="form-control input-sm" ng-options="event.value as event.name for event in $ctrl.clickEvents" ng-model="$ctrl.value.clickEvent.action" ng-change="$ctrl.update()"></select>
+    </div>
+    <div class="form-group">
+        <select class="form-control input-sm" ng-options="event.value as event.name for event in $ctrl.hoverEvents" ng-model="$ctrl.value.hoverEvent.action" ng-change="$ctrl.update()"></select>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-sm" ng-click="$ctrl.value.extra ? $ctrl.value.extra.push({}) : $ctrl.value.extra = [{}]">New child</button>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-danger btn-sm" ng-click="$ctrl.onDelete({value: $ctrl.value})">Remove</button>
+    </div>
 </form>
+<div class="input-group" ng-if="$ctrl.value.hoverEvent.action">
+    <span class="input-group-addon">{{$ctrl.value.hoverEvent.action}}</span>
+    <input type="text" class="form-control" ng-model="$ctrl.value.hoverEvent.value" ng-change="$ctrl.update()">
+</div>
+<div class="input-group" ng-if="$ctrl.value.clickEvent.action">
+    <span class="input-group-addon">{{$ctrl.value.clickEvent.action}}</span>
+    <input type="text" class="form-control" ng-model="$ctrl.value.clickEvent.value" ng-change="$ctrl.update()">
+</div>
 <div class="json-child">
-    <form class="form" ng-submit="$ctrl.value.extra ? $ctrl.value.extra.push({}) : $ctrl.value.extra = [{}]">
-        <button type="submit" class="btn btn-primary btn-sm">New child</button>
-    </form>
     <div ng-repeat="extra in $ctrl.value.extra">
-        <app-json-entry value="extra" on-update="$ctrl.update()"></app-json-entry>
+        <app-json-entry value="extra" on-update="$ctrl.update()" on-delete="$ctrl.onDeleteChild(value)"></app-json-entry>
     </div>
 </div>

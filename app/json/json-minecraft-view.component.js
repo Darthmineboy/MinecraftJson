@@ -8,7 +8,7 @@ angular.module('app').component('appJsonMinecraftView', {
 
         var timer = $interval(function() {
             obfuscate($ctrl.values);
-        }, 100);
+        }, 1000);
 
         $scope.$on('$destroy', function() {
             $interval.cancel(timer);
@@ -24,7 +24,6 @@ angular.module('app').component('appJsonMinecraftView', {
 
         var obfuscate = function(values) {
             angular.forEach(values, function(value) {
-                console.log(value);
                 if(value.obfuscated && value.text) {
                     value.text = randomString(value.text.length);
                 }

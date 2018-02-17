@@ -1,6 +1,6 @@
 <form class="form">
     <div class="form-group" ng-repeat="value in $ctrl.values track by $index">
-        <app-json-entry value="value" on-update="$ctrl.onUpdate()"></app-json-entry>
+        <app-json-entry value="value" on-update="$ctrl.onUpdate()" on-delete="$ctrl.onDelete(value)"></app-json-entry>
     </div>
 </form>
 <form class="form" ng-submit="$ctrl.values.push({})">
