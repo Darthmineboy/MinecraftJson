@@ -1,4 +1,4 @@
-angular.module('app').component('appJsonMinecraftView', {
+angular.module('minecraftJsonApp').component('minecraftJsonAppView', {
     templateUrl: '/app/json/json-minecraft-view.component.html',
     bindings: {
         _value: '=value'
@@ -80,6 +80,7 @@ angular.module('app').component('appJsonMinecraftView', {
 
         var build = function() {
             var values = angular.copy($ctrl._value);
+            // Pretty
             values = traverse(values);
             $ctrl.values = values;
         }

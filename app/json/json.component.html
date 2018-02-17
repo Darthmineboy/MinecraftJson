@@ -1,9 +1,14 @@
-<form class="form">
-    <div class="form-group" ng-repeat="value in $ctrl.values track by $index">
-        <app-json-entry value="value" on-update="$ctrl.onUpdate()" on-delete="$ctrl.onDelete(value)"></app-json-entry>
-    </div>
-</form>
-<form class="form" ng-submit="$ctrl.values.push({})">
-    <button type="submit" class="btn btn-primary btn-sm">New</button>
-</form>
-<app-json-minecraft-view value="$ctrl.values"></app-json-minecraft-view>
+<div ng-if="$ctrl.view === 'edit'">
+    <form class="form">
+        <div class="form-group" ng-repeat="value in $ctrl.values track by $index">
+            <minecraft-json-app-entry value="value" on-update="$ctrl.onUpdate()" on-delete="$ctrl.onDelete(value)"></minecraft-json-app-entry>
+        </div>
+    </form>
+    <form class="form" ng-submit="$ctrl.values.push({})">
+        <button type="submit" class="btn btn-primary btn-sm">New</button>
+    </form>
+</div>
+<div ng-if="$ctrl.view !== 'edit'">
+    <button class="btn btn-primary btn-sm" ng-click="$ctrl.view = 'edit'">Edit</button>
+</div>
+<minecraft-json-app-view value="$ctrl.values"></minecraft-json-app-view>

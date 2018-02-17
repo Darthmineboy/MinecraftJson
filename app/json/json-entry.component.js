@@ -1,7 +1,7 @@
 (function() {
     const unsetIfFalseProperties = ['bold', 'italic', 'underlined', 'strikethrough', 'obfuscated'];
 
-    angular.module('app').component('appJsonEntry', {
+    angular.module('minecraftJsonApp').component('minecraftJsonAppEntry', {
         templateUrl: '/app/json/json-entry.component.html',
         bindings: {
             value: '<',

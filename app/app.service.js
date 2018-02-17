@@ -1,4 +1,4 @@
-angular.module('app').service('appService', function() {
+angular.module('minecraftJsonApp').service('appService', function() {
 
     this.getMinecraftColors = function() {
         return colors;

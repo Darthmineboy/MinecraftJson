@@ -1,5 +1,9 @@
-angular.module('app').component('appJson', {
+angular.module('minecraftJsonApp').component('minecraftJsonApp', {
     templateUrl: '/app/json/json.component.html',
+    bindings: {
+        view: '<',
+        onUpdateOut: '&onUpdate'
+    },
     controller: function($scope) {
         const $ctrl = this;
 
@@ -38,7 +42,15 @@ angular.module('app').component('appJson', {
         }
 
         $ctrl.onUpdate = function() {
+            // Broadcast to child components
             $scope.$broadcast('update-view');
+            // Json
+            const json = [""];
+            angular.forEach($ctrl.values, function(e) {
+                json.push(e);
+            });
+            $ctrl.json = json;
+            $ctrl.onUpdateOut({json: json});
         }
     }
 });

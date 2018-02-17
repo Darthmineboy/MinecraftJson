@@ -1,5 +1,5 @@
 <div class="input-group" style="width: 100%;">
-    <input type="text" class="form-control" placeholder="Value" style="width: 75%;" ng-model="$ctrl.value.text" ng-change="$ctrl.update()">
+    <input type="text" class="form-control" placeholder="Value" style="width: 75%;" ng-model="$ctrl.value.text" ng-model-options="{debounce: 250}" ng-change="$ctrl.update()">
     <select class="form-control" style="width: 25%;" ng-options="color.value as color.name for color in $ctrl.colors" ng-model="$ctrl.value.color" ng-change="$ctrl.update()"></select>
 </div>
 <form class="form-inline">
@@ -41,6 +41,6 @@
 </div>
 <div class="json-child">
     <div ng-repeat="extra in $ctrl.value.extra">
-        <app-json-entry value="extra" on-update="$ctrl.update()" on-delete="$ctrl.onDeleteChild(value)"></app-json-entry>
+        <minecraft-json-app-entry value="extra" on-update="$ctrl.update()" on-delete="$ctrl.onDeleteChild(value)"></minecraft-json-app-entry>
     </div>
 </div>
